@@ -1,0 +1,236 @@
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);*/
+
+html {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 100%;
+}
+
+body {
+    background-color: #999;
+    background: url(../img/bg_right.png);
+    color: #383b3a;
+}
+
+h1 {
+    color: #0096af;
+    font-size: 2em;
+    margin: 40px 0 15px 0;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+a{
+    color: #0096af;
+    text-decoration: none;
+}
+
+a:visited{
+    text-decoration: none;
+}
+
+a:hover{
+    color: #383b3a;
+    text-decoration: none;
+}
+
+#header {
+    background: url('../img/header-bg.png') no-repeat 50% 14% #fff;
+    height: 104px;
+    border-bottom: 7px solid #383b3a;
+}
+
+#logo {
+    float: left;
+    margin: 12px 0 0 132px;
+}
+
+#mainmenu {
+    list-style: none;
+    float: right;
+    margin-top: 73px;
+    margin-right: 70px;
+    padding: 0;
+}
+
+#mainmenu li {
+    font-size: 1.1em;
+    float: left;
+    text-transform: uppercase;
+    margin-left: 35px;
+}
+
+#mainmenu li.active a {
+    color: #383b3a;
+}
+
+#content {
+    margin: 30px 0 45px;
+    padding: 0 70px;
+}
+
+
+
+#footer {
+    border-top: 7px solid #383b3a;
+    background-color: #e2e2e2;
+    color: #6b6b77;
+    font-size: 0.8em;
+    text-align: center;
+    line-height: 60px;
+}
+
+select {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    /*-webkit-appearance: none;*/
+    height: 40px;
+    line-height: 35px;
+    font-size: 1.3em;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+.persons {
+    margin: 10px 0;
+}
+
+.person {
+    margin-top: 50px;
+}
+
+.person img {
+    float: left;
+    border-radius: 72px;
+    border: 3px solid #0096af;
+}
+
+.person p, .person h3 {
+    margin: 0 0 0 180px;
+}
+
+.person h3 {
+    color: #0096af;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 1.4em;
+    margin-bottom: 3px;
+}
+
+.contacts {
+    background-color: #0096af;
+    padding: 35px 70px 25px;
+}
+
+.contacts h3 {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+.contacts input, .contacts textarea {
+    width: 100%;
+    border-radius: 3px;
+    padding: 3px 10px;
+    height: 40px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 1px solid #a0a0a0;
+}
+
+.contacts textarea {
+    height: 100px;
+}
+
+.contacts .captcha {
+    height: 40px;
+    width: 120px;
+    float: left;
+}
+
+.contacts input[name=captcha]{
+    width: 150px;
+    margin-left: 20px;
+}
+
+.contacts input[type=button] {
+    border: 1px solid #333;
+    background-color: #393b3a;
+    color: #fff;
+    float: right;
+    width: 150px;
+}
+
+/* Climate change */
+
+#climate-change .title {
+    background-color: #383b3a;
+    color: #fff;
+    height: 80px;
+    font-size: 1.5em;
+    text-align: center;
+    padding-top: 15px;
+    box-sizing: border-box;
+}
+
+#climate-change .title small {
+    display: block;
+    font-size: 0.45em;
+}
+
+#climate-change .content {
+    background-color: #0096af;
+    height: 500px;
+    color: #fff;
+    text-align: center;
+}
+
+#climate-change .content input[type=text]{
+    width: 70px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 3px;
+    padding: 3px;
+    color: #383b3a;
+    border: 1px solid #a0a0a0;
+    text-align: right;
+}
+
+#climate-change .ask {
+    padding: 25px 0;
+    line-height: 25px;
+}
+
+#climate-change .results {
+    margin: 20px 0 0;
+}
+
+#climate-change .footer {
+    background-color: #383b3a;
+    color: #fff;
+    height: 80px;
+    text-align: right;
+    padding: 20px 25px 0;
+    box-sizing: border-box;
+}
+
+#climate-change .footer .logo{
+    margin-top: 6px;
+    float: left;
+}
+
+#climate-change .footer small {
+    display: block;
+    font-size: 0.7em;
+}
+
+/* end Climate change */
