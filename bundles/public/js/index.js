@@ -41,7 +41,7 @@
         .focus();
 
         this.on('calculate', function(){
-            var value = parseFloat(that.find('#carbone').val());
+            var value = parseFloat(that.find('#carbone').val() || 0);
 
             if (value >= 0.05 && value <= 55) {
                 for (var i in regions) {
