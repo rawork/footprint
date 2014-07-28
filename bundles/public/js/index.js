@@ -47,7 +47,8 @@
             })
             .focus()
             .siblings('input[type=button]').on('click', function(e){
-                    cleanInput(e)
+                cleanInput(e)
+                $('#weight').focus()
             });
 
         this.on('calculate', function(){
