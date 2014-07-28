@@ -27,54 +27,66 @@
             }
         }
 
-        this.find('#carbone').on('keypress', function(e){
-            if ( e.which == 13 ) {
+        var cleanInput = function(e){
+            var chars = [127,8,37,38,39,40,44,46];
+            var charCode = e.which || e.keyCode;
+            if ( charCode == 13 ) {
                 e.preventDefault();
                 that.trigger('calculate');
-            } else if ((e.which < 48 || e.which > 57) && e.which != 46) {
+            } else if ((charCode < 48 || charCode > 57) && chars.indexOf(charCode) == -1) {
                 e.preventDefault();
             }
-        })
-        .on('focusout', function(e){
-            that.trigger('calculate');
-        })
-        .focus();
+        }
+
+        $('#weight')
+            .on('keypress', function(e){
+                cleanInput(e)
+            })
+            .on('focusout', function(e){
+                that.trigger('calculate');
+            })
+            .focus()
+            .siblings('input[type=button]').on('click', function(e){
+                    cleanInput(e)
+            });
 
         this.on('calculate', function(){
-            var value = parseFloat(that.find('#carbone').val() || 0);
+            var value = parseFloat($('#weight').val().replace(',', '.') || 0);
+            if (value){
+                $('#weight').val(value);
+                that.find('#carbone-weight').html(value);
+            }
 
-            if (value >= 0.05 && value <= 55) {
+            if (value >= 0.05 && value <= 15000) {
+                var isDaily = (value >= 0.05 && value <= 55);
+
                 for (var i in regions) {
-                    that.find('.'+i+' .percent').html(count(value, regions[i], true)+ '%');
+                    that.find('.'+i+' .percent').html(count(value, regions[i], isDaily)+ '%');
                 }
+
+                if (isDaily) {
+                    that.find('.clock').hide();
+                    that.find('.yearly').hide();
+                    that.find('.calendar').show();
+                    that.find('.daily').show();
+                } else {
+                    that.find('.calendar').hide();
+                    that.find('.daily').hide();
+                    that.find('.clock').show();
+                    that.find('.yearly').show();
+                }
+
                 that.find('.global').show();
                 that.find('.europe').hide();
                 that.find('.usa').hide();
-                that.find('.clock').hide();
-                that.find('.yearly').hide();
-                that.find('.calendar').show();
-                that.find('.daily').show();
                 that.find('.earth').hide();
                 that.find('.tabs li.active').removeClass('active');
                 that.find('.tabs li[data-region=global]').addClass('active');
                 that.find('.results').show();
-            } else if (value > 55 && value <= 15000) {
-                for (var i in regions) {
-                    that.find('.'+i+' .percent').html(count(value, regions[i], false)+ '%');
-                }
-                that.find('.global').show();
-                that.find('.europe').hide();
-                that.find('.usa').hide();
-                that.find('.calendar').hide();
-                that.find('.daily').hide();
-                that.find('.clock').show();
-                that.find('.yearly').show();
-                that.find('.tabs li.active').removeClass('active');
-                that.find('.tabs li[data-region=global]').addClass('active');
-                that.find('.earth').hide();
-                that.find('.results').show();
+                that.find('#ask-value').show();
             } else {
                 that.find('.earth').show();
+                that.find('#ask-value').hide();
                 if (value === 0) {
                     that.find('.warning').hide();
                 } else{

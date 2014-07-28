@@ -27,6 +27,8 @@
         <select>
             <option value="1">Climate Change (Global Warming Potential)</option>
         </select>
+        <input type="text" id="weight" name="weight" /> kg CO2 equivalent
+        <input type="button" value="Calc">
         <br><br>
         <div id="climate-change">
             <div class="title">
@@ -35,8 +37,8 @@
             </div>
             <div class="content">
                 <div class="ask">
-                    Compare your value to  the average per capita carbon footprint:
-                    <input type="text" id="carbone" name="carbone" /> kg CO2 equivalent
+                    <div id="ask-value">Compare your value <span id="carbone-weight"></span>
+                     kg CO2 equivalent</div>
                 </div>
                 <div class="earth">
                     <img src="bundles/public/img/climate-change/earth.png" >
