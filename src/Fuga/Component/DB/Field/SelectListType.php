@@ -126,7 +126,6 @@ class SelectListType extends Type
 			$stmt = $this->get('connection')->prepare($sql);
 			$stmt->execute();
 			$items = $stmt->fetchAll();
-			var_dump($this->dbId);
 
 			return $this->get('templating')->render(
 				'form/field/selectlist.simple.html.twig',
