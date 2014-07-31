@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Footprint Translator</title>
+    <!--<link href="bundles/bootstrap3/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="/bundles/public/css/normalize.css" rel="stylesheet">
+    <link href="/bundles/public/css/index.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/bundles/ie/html5shiv.js"></script>
+    <script type="text/javascript" src="/bundles/ie/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+    <div id="header">
+        <img id="logo" src="/bundles/public/img/logo.png">
+        <ul id="mainmenu">
+            <li class="active"><a href="/">Translator</a></li>
+            {% for link in links  %}
+                <li{% if curnode.id == link.id %} class="active"{% endif %}><a href="{{ link.ref }}">{{ link.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div id="content">
+        <h1>Translate your impacts</h1>
+
+        <select>
+            <option value="1">Climate Change (Global Warming Potential)</option>
+        </select>
+        <input type="text" id="weight" name="weight" /> kg CO2 equivalent
+        <input type="button" value="Calculate">
+        <br><br>
+        <div id="climate-change">
+            <div class="title">
+                CLIMATE CHANGE IMPACT
+                <small>(Carbon Footprint or Global Warming Potential)</small>
+            </div>
+            <div class="content">
+                <div class="ask">
+                    <div id="ask-value">Compare your value <span id="carbone-weight"></span>
+                     kg CO2 equivalent</div>
+                </div>
+                <div class="earth">
+                    <img src="/bundles/public/img/climate-change/earth.png" >
+                    <div class="warning">
+                        Value you entered is beyond this graph visualization capacities.<br>
+                        Please enter the value between 0,05 and 15000
+                    </div>
+                </div>
+                <div class="results">
+                    <div class="tabs">
+                        <ul>
+                            <li data-region="global">Global</li>
+                            <li data-region="europe">Europe</li>
+                            <li data-region="usa">Usa</li>
+                        </ul>
+                    </div>
+                    <div class="data">
+                        <div class="slide global">
+                            <img src="/bundles/public/img/climate-change/world.png">
+                            <div class="square">
+                                <div class="clock"></div>
+                                <div class="calendar"></div>
+                                <p class="percent"></p>
+                                <p class="daily">of the average world citizen’s<br>
+                                    DAILY carbon footprint</p>
+                                <p class="yearly">of the average world citizen’s<br>
+                                    YEARLY carbon footprint</p>
+                            </div>
+                        </div>
+                        <div class="slide europe">
+                            <img src="/bundles/public/img/climate-change/europe.png">
+                            <div class="square">
+                                <div class="clock"></div>
+                                <div class="calendar"></div>
+                                <p class="percent"></p>
+                                <p class="daily">of the average European’s<br>
+                                    DAILY carbon footprint</p>
+                                <p class="yearly">of the average European’s<br>
+                                    YEARLY carbon footprint</p>
+                            </div>
+                        </div>
+                        <div class="slide usa">
+                            <img src="/bundles/public/img/climate-change/usa.png">
+                            <div class="square">
+                                <div class="clock"></div>
+                                <div class="calendar"></div>
+                                <p class="percent"></p>
+                                <p class="daily">of the average American’s<br>
+                                    DAILY carbon footprint</p>
+                                <p class="yearly">of the average American’s<br>
+                                    YEARLY carbon footprint</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="footer">
+                <img class="logo" src="/bundles/public/img/small_logo.png">
+                How was this calculated?
+                <small>Need help translating your product’s impacts? Visit us at <strong>FootprintTranslator.com</strong>.</small>
+            </div>
+        </div>
+
+        <div class="download hidden">
+            Like this? Share it with your friends or download a PDF for yourown use. For downloads, please credit FootprintTranslator.com.
+        </div>
+    </div>
+    <div id="footer">
+        {{ render('Fuga:Public:Common:block', {name: 'copyright'}) }}
+    </div>
+</div>
+<script type="text/javascript" src="/bundles/jquery/jquery.js"></script>
+<script type="text/javascript" src="/bundles/public/js/index.js"></script>
+</body>
+</html>

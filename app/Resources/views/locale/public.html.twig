@@ -1,0 +1,5 @@
+<ul class="langs clearfix">
+    {% for locale in locales %}
+    <li{% if locale.language == currentLocale %} class="active"{% endif %}><a href="{{ path('public_page',{node: curnode.name}, locale.language) }}"><img src="/bundles/public/img/{{ locale.language }}.jpg" alt="" width="16" height="11"/></a></li>
+    {% endfor %}
+</ul>

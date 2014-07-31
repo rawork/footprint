@@ -1,0 +1,11 @@
+<div class="pages">
+    <ul class="pagination">
+        <li{% if begin_link is empty %} class="active"{% endif %}><a href="{{ begin_link }}">&lt;&lt;</a></li>
+        <li{% if prev_link is empty %} class="active"{% endif %}><a href="{{ prev_link }}">&lt;</a></li>
+        {% for i in pages %}
+        <li{% if page ==i.name %} class="active"{% endif %}><a href="{{ i.ref }}">{{ i.name }}</a></li>
+        {% endfor %}
+        <li{% if next_link is empty %} class="active"{% endif %}><a href="{{ next_link }}">&gt;</a></li>
+        <li{% if end_link is empty %} class="active"{% endif %}><a href="{{ end_link }}">&gt;&gt;</a></li>
+    </ul>
+</div>

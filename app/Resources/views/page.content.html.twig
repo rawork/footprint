@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Footprint Translator - {{ title }}</title>
+    <!--<link href="bundles/bootstrap3/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="/bundles/public/css/normalize.css" rel="stylesheet">
+    <link href="/bundles/public/css/index.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/bundles/ie/html5shiv.js"></script>
+    <script type="text/javascript" src="/bundles/ie/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+    <div id="header">
+        <img id="logo" src="/bundles/public/img/logo.png">
+        <ul id="mainmenu">
+            <li><a href="/">Translator</a></li>
+            {% for link in links  %}
+            <li{% if curnode.id == link.id %} class="active"{% endif %}><a href="{{ link.ref }}">{{ link.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div id="content">
+        {{ maincontent }}
+    </div>
+    <div class="contacts">
+        {{ render('Fuga:Public:Common:form', {name: 'feedback'}) }}
+    </div>
+    <div id="footer">
+        {{ render('Fuga:Public:Common:block', {name: 'copyright'}) }}
+    </div>
+</div>
+<script type="text/javascript" src="/bundles/jquery/jquery.js"></script>
+<script type="text/javascript" src="/bundles/public/js/index.js"></script>
+</body>
+</html>

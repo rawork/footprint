@@ -13,7 +13,7 @@ body {
 
 h1 {
     color: #0096af;
-    font-size: 2em;
+    font-size: 1.1em;
     margin: 40px 0 15px 0;
     text-transform: uppercase;
     font-weight: normal;
@@ -90,11 +90,12 @@ select {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     /*-webkit-appearance: none;*/
-    height: 40px;
-    line-height: 35px;
-    font-size: 1.3em;
-    border-radius: 3px;
+    height: 30px;
+    width: 390px;
+    line-height: 25px;
     padding: 3px;
+    border-radius: 3px;
+    behavior: url(../../ie/PIE.htc);
 }
 
 .persons {
@@ -107,8 +108,9 @@ select {
 
 .person img {
     float: left;
-    border-radius: 72px;
     border: 3px solid #0096af;
+    border-radius: 72px;
+    behavior: url(../../ie/PIE.htc);
 }
 
 .person p, .person h3 {
@@ -127,16 +129,11 @@ input[type=button] {
     border: 1px solid #333;
     background-color: #393b3a;
     color: #fff;
-    height: 40px;
-    line-height: 35px;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    font-size: 1.3em;
-    border-radius: 3px;
     text-transform: uppercase;
-    padding: 0 19px;
+    padding: 3px 19px;
     margin-left: 5px;
+    border-radius: 3px;
+    behavior: url(../../ie/PIE.htc);
 }
 
 
@@ -156,12 +153,13 @@ input[type=button] {
 
 .contacts input, .contacts textarea {
     width: 100%;
-    border-radius: 3px;
     padding: 3px 10px;
     height: 40px;
     margin-bottom: 20px;
     box-sizing: border-box;
     border: 1px solid #a0a0a0;
+    border-radius: 3px;
+    behavior: url(../../ie/PIE.htc);
 }
 
 .contacts textarea {
@@ -174,12 +172,12 @@ input[type=button] {
     float: left;
 }
 
-.contacts input[name=captcha]{
+.contacts input[name=securecode]{
     width: 150px;
     margin-left: 20px;
 }
 
-.contacts input[type=button] {
+.contacts input[type=submit] {
     border: 1px solid #333;
     background-color: #393b3a;
     color: #fff;
@@ -195,10 +193,8 @@ input[type=button] {
 
 input#weight{
     width: 100px;
-    height: 40px;
-    line-height: 35px;
-    font-size: 1.3em;
-    border-radius: 3px;
+    height: 30px;
+    line-height: 25px;
     padding: 3px;
     color: #383b3a;
     border: 1px solid #a0a0a0;
@@ -207,6 +203,20 @@ input#weight{
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     margin: 0 10px;
+    border-radius: 3px;
+    behavior: url(../../ie/PIE.htc);
+}
+
+.alert {
+    padding: 0 0 10px;
+}
+
+.alert-success {
+    color: #fff;
+}
+
+.alert-error {
+    color: #990000;
 }
 
 /* Climate change */
